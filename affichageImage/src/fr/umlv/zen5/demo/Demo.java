@@ -10,9 +10,17 @@ import fr.umlv.zen5.ApplicationContext;
 import fr.umlv.zen5.Event;
 import fr.umlv.zen5.ScreenInfo;
 import fr.umlv.zen5.Event.Action;
+import java.awt.Image;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.io.File;
+import java.io.IOException;
+import javax.swing.JComponent;
+
+import javax.imageio.ImageIO;
 
 public class Demo {
-  static class Area {
+  /*static class Area {
     private Ellipse2D.Float ellipse = new Ellipse2D.Float(0, 0, 0, 0);
     
     void draw(ApplicationContext context, float x, float y) {
@@ -27,9 +35,24 @@ public class Demo {
         graphics.fill(ellipse);
       });
     }
-  }
+  }*/
+	
+	
+	
+	//Display image : with im.getGraphics()
   
+	
+	
+	
   public static void main(String[] args) {
+	  
+	  
+	  
+	  
+	  
+	  
+	  var test_im = new ImageComponent("ALGAE");
+	  
     Application.run(Color.ORANGE, context -> {
       
       // get the size of the screen
@@ -41,9 +64,10 @@ public class Demo {
       context.renderFrame(graphics -> {
         graphics.setColor(Color.ORANGE);
         graphics.fill(new  Rectangle2D.Float(0, 0, width, height));
+        
       });
       
-      Area area = new Area();
+      //Area area = new Area();
       for(;;) {
         Event event = context.pollOrWaitEvent(10);
         if (event == null) {  // no event
@@ -58,7 +82,11 @@ public class Demo {
         System.out.println(event);
         
         Point2D.Float location = event.getLocation();
-        area.draw(context, location.x, location.y);
+        //area.draw(context, location.x, location.y);
+        context.renderFrame(graphics ->{
+        	test_im.display(graphics, (int)location.x, (int)location.y);
+        });
+        
       }
     });
   }
