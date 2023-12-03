@@ -51,9 +51,9 @@ public class Demo {
 	  
 	  
 	  
-	  var test_im = new ImageComponent("ALGAE");
+	  var test_im = new ImageComponent("ALGAE_0");
 	  
-    Application.run(Color.ORANGE, context -> {
+    Application.run(Color.BLACK, context -> {
       
       // get the size of the screen
       ScreenInfo screenInfo = context.getScreenInfo();
@@ -61,11 +61,12 @@ public class Demo {
       float height = screenInfo.getHeight();
       System.out.println("size of the screen (" + width + " x " + height + ")");
       
-      context.renderFrame(graphics -> {
+      /*context.renderFrame(graphics -> {
         graphics.setColor(Color.ORANGE);
         graphics.fill(new  Rectangle2D.Float(0, 0, width, height));
         
-      });
+      });*/
+   
       
       //Area area = new Area();
       for(;;) {

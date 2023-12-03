@@ -18,8 +18,12 @@ class ImageComponent extends JComponent{
         } catch (IOException e){
             e.printStackTrace();
         }*/
-    	try (var input = ImageComponent.class.getResourceAsStream("/images/" + name + ".png")){
-    		image = ImageIO.read(input);
+    	try (var input = ImageComponent.class.getResourceAsStream( "/images/" + name + ".png")){
+    		if (input == null) {
+          System.err.println("Image not found: " + name);
+          return;
+          }
+    		image = ImageIO.read(input);  
     	} catch (IOException e) {
     		e.printStackTrace();
     	}
