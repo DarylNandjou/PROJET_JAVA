@@ -10,33 +10,12 @@ import fr.umlv.zen5.Event.Action;
 import fr.umlv.zen5.ScreenInfo;
 
 public class Demo {
-  /*static class Area {
-    private Ellipse2D.Float ellipse = new Ellipse2D.Float(0, 0, 0, 0);
-    
-    void draw(ApplicationContext context, float x, float y) {
-      context.renderFrame(graphics -> {
-        // hide the previous rectangle
-        graphics.setColor(Color.ORANGE);
-        graphics.fill(ellipse);
-        
-        // show a new ellipse at the position of the pointer
-        graphics.setColor(Color.MAGENTA);
-        ellipse = new Ellipse2D.Float(x - 20, y - 20, 40, 40);
-        graphics.fill(ellipse);
-      });
-    }
-  }*/
-	
-	
-	
-	//Display image : with im.getGraphics()
-  
 	
 	
 	
   public static void main(String[] args) {
 	  
-	  var test_im = new ImageComponent("ALGAE_0");
+	  var test_im = new ComposantImage("ALGAE");
 	  
     Application.run(Color.WHITE, context -> {
       
@@ -48,7 +27,7 @@ public class Demo {
       
    
       
-      //Area area = new Area();
+      
       for(;;) {
         Event event = context.pollOrWaitEvent(10);
         if (event == null) {  // no event
@@ -63,7 +42,7 @@ public class Demo {
         System.out.println(event);
         
         Point2D.Float location = event.getLocation();
-        //area.draw(context, location.x, location.y);
+        
         context.renderFrame(graphics ->{
         	graphics.setColor(Color.WHITE);
             graphics.fill(new  Rectangle2D.Float(0, 0, width, height));
