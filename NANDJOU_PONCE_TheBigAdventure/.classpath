@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="classes"/>
 	<classpathentry kind="lib" path="lib/zen5.jar"/>
 	<classpathentry kind="lib" path="zen5.jar"/>
 	<classpathentry kind="output" path="bin"/>
