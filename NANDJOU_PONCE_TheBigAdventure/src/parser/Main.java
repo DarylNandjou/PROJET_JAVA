@@ -7,6 +7,7 @@ import java.nio.file.Path;
 public class Main {
 
   public static void main(String[] args) throws IOException {
+	  
     var path = Path.of("demo.map");
     var text = Files.readString(path);
     var lexer = new Lexer(text);

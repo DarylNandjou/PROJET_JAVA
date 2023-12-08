@@ -9,6 +9,14 @@ public class Map {
 	public HashMap<PointInt,String> terrain;
 	public HashMap<PointInt,Element> elements;
 	
+	public void addTerrain(PointInt position, String tile) {
+		terrain.put(position, tile);
+	}
+	
+	public void addElement(Element element) {
+		elements.put(element.position, element);
+	}
+	
 	
 	
 }
