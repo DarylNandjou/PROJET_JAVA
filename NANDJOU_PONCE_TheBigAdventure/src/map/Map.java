@@ -25,7 +25,7 @@ public class Map {
 	}
 	
 	public void addElement(Element element) {
-		elements.put(element.position, element);
+		elements.put(element.position.get(), element);
 	}
 	
 	

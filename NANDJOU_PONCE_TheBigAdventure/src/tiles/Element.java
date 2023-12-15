@@ -2,28 +2,61 @@ package tiles;
 
 import java.util.List;
 import java.util.Optional;
+
 import map.PointInt;
+import parser.Lexer;
+import parser.Result;
 
 public class Element {
-	Optional <String> name;
-	public String skin;
-	public PointInt position;
-	Optional <Integer> health;
-	String kind;
-	Optional<PointInt> zoneDep;
-	Optional<PointInt> zoneVar;
-	Optional<String> behavior;
-	Optional<Integer> damage;
-	Optional<String> text;
-	Optional<List<String>> steal;
-	Optional<List<String>> trade;
-	Optional<Boolean> locked;
-	Optional<PointInt> flow;
-	Optional<Boolean> phantomized;
-	Optional<PointInt> teleport;
+	public Optional <String> name;
+	public Optional<String> skin;
+	public Optional<PointInt> position;
+	public Optional <Integer> health;
+	public Optional<String> kind;
+	private Optional<PointInt> zoneDep;
+	private Optional<PointInt> zoneVar;
+	private Optional<String> behavior;
+	public Optional<Integer> damage;
+	public Optional<String> text;
+	public Optional<List<String>> steal;
+	public Optional<List<String>> trade;
+	private Optional<Boolean> locked;
+	public Optional<PointInt> flow;
+	public Optional<Boolean> phantomized;
+	public Optional<PointInt> teleport;
 	
-	Element(String skin, PointInt position, String kind){
+	
+	public void getData (Result res, Lexer lexer){
+		
+		while((res = lexer.nextResult()) != null) {
+			switch(res.token()) {
+			
+			case LEFT_BRACKET : break;
+			
+			case IDENTIFIER :
+				switch(res.content()) {
+				case "name" : break;
+				case "skin" : break;
+				case "position" : break;
+				case "health" : break;
+				case "zone" : break;
+				case "behavior" : break;
+				case "damage" : break;
+				case "text" : break;
+				case "steal" : break;
+				case "trade" : break;
+				case "flow" : break;
+				case "phantomized" : break;
+				case "teleport" : break;
+				}
+				
+			default : break;
+			
+			}
+		}
 		
 	}
+	
+	
 	
 }
