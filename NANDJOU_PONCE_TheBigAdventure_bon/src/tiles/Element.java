@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import map.PointInt;
+import utilitaires.PointInt;
 import parser.Lexer;
 import parser.Result;
 import parser.Token;
